@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for 
+import os
 
 app = Flask(__name__)
 app.secret_key = 'votre_clé_secrète_ici'  # Changez ceci en production    
@@ -119,6 +120,6 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    #app.run(debug=True) 
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
