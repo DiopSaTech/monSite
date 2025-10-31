@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main style="max-width:1200px;margin:auto;padding:30px;">
+  <section id="langages" style="margin-bottom:40px;">
+    <h2>Évolution des langages</h2>
+    <p>Les langages les plus utilisés en 2025 sont dominés par <strong>Python</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong> et <strong>Go</strong>. La montée du Machine Learning et de l’IA a renforcé Python, tandis que TypeScript s’impose pour la fiabilité côté web.</p>
+    <div style="width:100%;max-width:1000px;margin:auto;">
+      <canvas id="langChart" height="350"></canvas>
+    </div>
+    <button onclick="updateLangages()">Mettre à jour</button>
+    <p id="majLang" class="small"></p>
+  </section>
+
+  <section id="menaces" style="margin-bottom:40px;">
+    <h2>Menaces numériques</h2>
+    <p>Les menaces majeures observées entre 2020 et 2025 incluent :</p>
+    <ul>
+      <li>Augmentation des attaques par ransomware et supply chain.</li>
+      <li>Exploitation accrue des vulnérabilités 0-day.</li>
+      <li>Phishing ciblé via IA générative.</li>
+    </ul>
+    <div style="width:100%;max-width:700px;margin:auto;">
+      <canvas id="threatChart" height="320"></canvas>
+    </div>
+    <button onclick="updateMenaces()">Actualiser</button>
+    <p id="majMenaces" class="small"></p>
+  </section>
+
+  <section id="reponses" style="margin-bottom:40px;">
+    <h2>Réponses en cybersécurité</h2>
+    <p>Face à ces menaces, les organisations adoptent :</p>
+    <ul>
+      <li>MFA généralisée et politiques Zero Trust.</li>
+      <li>Renforcement des EDR/XDR et SOC basés sur l’IA.</li>
+      <li>Formation accrue à la sécurité et durcissement des infrastructures cloud.</li>
+    </ul>
+    <button onclick="updateReponses()">Rafraîchir</button>
+    <p id="majReponses" class="small"></p>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  function updateLangages() {
+    document.getElementById('majLang').textContent = 'Dernière mise à jour : ' + new Date().toLocaleString();
+    const ctx = document.getElementById('langChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Python', 'JavaScript', 'TypeScript', 'Go', 'Java', 'Rust'],
+        datasets: [{
+          label: 'Popularité relative 2020–2025',
+          data: [95, 88, 82, 70, 68, 50],
+          backgroundColor: 'rgba(110,231,183,0.6)'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {legend: {display: false}},
+        scales: {y: {beginAtZero: true}}
+      }
+    });
+  }
+
+  function updateMenaces() {
+    document.getElementById('majMenaces').textContent = 'Dernière actualisation : ' + new Date().toLocaleString();
+    const ctx = document.getElementById('threatChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Ransomware', 'Phishing', '0-day', 'Supply Chain', 'Autres'],
+        datasets: [{
+          label: 'Répartition des menaces',
+          data: [40, 25, 15, 10, 10],
+          backgroundColor: [
+            'rgba(255,99,132,0.7)',
+            'rgba(255,206,86,0.7)',
+            'rgba(54,162,235,0.7)',
+            'rgba(153,102,255,0.7)',
+            'rgba(75,192,192,0.7)'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {legend: {position: 'bottom'}}
+      }
+    });
+  }
+
+  function updateReponses() {
+    document.getElementById('majReponses').textContent = 'Mise à jour effectuée : ' + new Date().toLocaleString();
+  }
+
+  updateLangages();
+  updateMenaces();
+</script>
+{% endblock %}

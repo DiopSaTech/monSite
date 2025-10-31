@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil - Portfolio{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content"> 
+            <h1 class="hero-title">Merci pour votre visite, je suis <span class="highlight">Sakhewar DIOP</span></h1>
+            <h2 class="hero-subtitle">Quand le développement rencontre la cybersécurité</h2>
+            <p class="hero-description">
+                Développeur Web Full Stack passionné, j'ai choisi d'approfondir mes compétences en cybersécurité à travers un Master à EPITECH. Cette double expertise me permet d'adopter une approche unique : concevoir des applications web modernes tout en anticipant leurs vulnérabilités.
+                Mon univers s'étend du pentesting à la forensique numérique, du hacking éthique à l'architecture sécurisée. Je ne me contente pas de construire le web — je le protège.
+                Que ce soit pour développer une application robuste, auditer la sécurité d'un système, ou restaurer des données compromises, j'apporte une vision 360° où chaque ligne de code est pensée avec la sécurité en tête.
+               
+            </p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('projects') }}" class="btn btn-primary">Voir mes projets</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/photo.png') }}" alt="Photo de profil">
+        </div>
+    </div>
+</section>
+
+<section class="skills">
+    <div class="container">
+        <h2 class="section-title">Compétences Techniques</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">🐍</div>
+                <h3>Python</h3>
+                <p>Flask, Django, Plotly, TensorFlow</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🖧 </div>
+                <h3>réseaux</h3>
+                <p>ipv4, ipv6, routage, protocole, model OSI & tcp/ip, firewall, dhcp,arp, dns, ssh, Telnet,...</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">☕</div>
+                <h3>JAVA</h3>
+                <p>JAVAFX, Spring Boot</p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">💾</div>
+                <h3>Bases de données</h3>
+                <p>PostgreSQL, MySQL, MongoDB</p>
+            </div> 
+
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>WEB</h3>
+                <p>HTML, CSS, JavaScript, php, Bootstrap, Tailwind</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔧</div>
+                <h3>Outils</h3>
+                <p>Git, Docker, Linux, IA</p>
+            </div> 
+            <div class="skill-card">
+                <div class="skill-icon">⚡</div>
+                <h3>JavaScript</h3>
+                <p>web/client</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔒</div>
+                <h3>cybersécurité</h3>
+                <p>Pentest, DevSecOps, Forensique, IA</p>
+            </div>
+        </div>
+    </div> 
+
+    <div class="container">
+        <h2 class="section-title">Compétences Transversales</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon"><img src="{{ url_for('static', filename='images/volonte.png') }}" alt="Photo de profil"></div>
+                <h3>La determination</h3>
+                <p>Je suis une personne qui est très déterminée à atteindre mes objectifs.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><img src="{{ url_for('static', filename='images/reunion.png') }}" alt="Photo de profil"></div>
+                <h3>l'exprit d'equipe</h3>
+                <p>Je suis une personne qui est très équipe et qui aime travailler en équipe.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><img src="{{ url_for('static', filename='images/ecoute.png') }}" alt="Photo de profil"></div>
+                <h3>Le sens de l'ecoute</h3>
+                <p>Je suis une personne qui est très écouteuse et qui aime comprendre les besoins des autres.</p>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon"><img src="{{ url_for('static', filename='images/pensee.png') }}" alt="Photo de profil"></div>
+                <h3>L'exprit d'analyse</h3>
+                <p>Je suis une personne qui est très analytique et qui aime résoudre des problèmes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+{% endblock %}

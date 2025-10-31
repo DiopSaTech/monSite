@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Portfolio{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Contactez-moi</h2>
+        
+        <!-- Message d'information -->
+        <div class="info-box">
+            <p style="text-align: center; font-size: 1.1rem; color: #4a5568; line-height: 1.6;">
+                Le formulaire de contact est en cours de configuration.
+            </p>
+            <p style="text-align: center; font-size: 1.1rem; color: #4a5568; line-height: 1.6; margin-top: 8px;">
+                En attendant, vous pouvez m’envoyer un email directement :
+            </p>
+            <div style="text-align: center; margin: 15px 0;">
+                <a href="mailto:sakhewar1.diop1@gmail.com" class="email-link">
+                    sakhewar1.diop1@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <!-- Formulaire désactivé -->
+        <form class="contact-form disabled-form" method="POST">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" disabled>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" disabled>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" disabled></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" disabled>
+                Envoyer le message
+            </button>
+        </form>
+    </div>
+</section>
+
+<style>
+/* Style du message d'info */
+.info-box {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.email-link {
+    display: inline-block;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.email-link:hover {
+    background: #dbeafe;
+}
+
+/* Style du formulaire désactivé */
+.disabled-form {
+    opacity: 0.6;
+    pointer-events: none; /* Empêche tout clic */
+    filter: grayscale(80%);
+}
+
+.disabled-form input,
+.disabled-form textarea {
+    background: #f1f5f9;
+    cursor: not-allowed;
+}
+
+.submit-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: #2563eb;
+}
+
+.submit-btn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+</style>
+{% endblock %}
