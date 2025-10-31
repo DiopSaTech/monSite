@@ -1,5 +1,5 @@
 # 👋 Bienvenue sur mon portfolio !
-
+![Capture d'écran du site](./screenshots/portfolio-preview.png)
 [![Site en ligne](https://img.shields.io/badge/site-monsite--k9gr.onrender.com-brightgreen?style=flat&logo=render)](https://monsite-k9gr.onrender.com)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
